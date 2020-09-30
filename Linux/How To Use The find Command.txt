@@ -1,0 +1,223 @@
+🎬 https://youtu.be/KCVaNb_zOuw
+
+Find ALL directory & files in the current directory (exhaustive list):
+
+    👀 find will return ALL files AND directories both current 👉 and under the current directory 👇👇👇 by default
+        ○ Specify -type f for file if needed
+        ○ Specify -type d for directory if needed
+
+    💲 find .
+
+    
+
+
+Find ALL directory & files under specific directory (exhaustive list):
+
+    💲 find Udemy-DevOps/
+    
+    $ find {folder_name}/
+    
+    
+
+
+
+Find ONLY directory under current directory (exclude files):
+
+    💲 find . -type d
+    
+    
+
+
+Find ONLY files under current directory (exclude directory):
+
+    💲 find . -type f
+    
+    
+    
+    
+Search for Exact file name:
+    
+    💲 find . -type f -name "calc.py"
+    
+     $ find here -type: f -name: file_name.extension
+    
+    
+    
+
+Search for file name with * wild card:
+    
+    💲 find . -type f -name "*.sample"
+    
+     $ find . -type: f -name "any file ends with .sample extension"
+    
+    
+    
+    
+    
+    
+    
+Search for file as case-insensitive:
+
+    💲 find . -type f -iname "test*"
+    
+     $ find . -type: f -insensitive name "starts with the word test-"
+    
+    
+    
+    
+Find ALL files modified over certain minutes time horizon:
+
+    💲 find -mmin -20
+    
+     $ find files that has been modified less than (<) 20 mins ago
+    
+    
+    
+    
+    
+    💲 find -type f -mmin +5 -mmin -30
+    
+     $ find -type: file between {5 - 30} minutes
+    
+    NOTE:
+        +5 : more than / greater than / over 5 minutes
+        
+        -30: less than / smaller than / under 30 minutes
+    
+    
+    
+Find ALL directories modified more than 10 mins ago:
+
+    💲 find . -type d -mmin +10
+    
+     $ find . -type: directory -minutes > 10 
+     
+    
+    
+    
+Find ALL files modified over certain days time horizon:
+
+    💲 find . -type f -mtime -7
+    
+     $ find files that has been modified less than (<) 7 days ago
+    
+    
+
+
+    💲 find -type f -mtime +3
+    
+     $ find files that are modified more than 3 days ago
+    
+    
+    
+    
+Find ALL files accessed over certain time horizon:
+
+    💲 find -type f -atime -1
+    
+    💲 find -type f -amin -60
+    
+    
+    
+Find ALL files change over certain time horizon:
+
+    💲 find -type f -ctime -1
+    
+    💲 find -type f -cmin -60
+    
+    
+
+Search files by size: over 1 MB
+
+    💲 find -type f -size -1M
+    
+    💲 find -type f -size +1M
+    
+    👀 make sure to capitalize letter M for Megabytes
+    
+    
+    
+Search files by size: over / under 1 k
+
+    💲 find -type f -size -1k
+    
+    💲 find -type f -size +1k
+
+    👀 make sure to letter k is lower-case for kilobytes
+    
+    
+    
+🌟 Combine time and size filter together: find file under 1kb in size AND created less than 60 minutes ago
+
+    💲 find -type f -size -1k -ctime -60
+    
+    
+    
+    
+List files with detailed information (E.g. size)
+
+    # comprehensive long list
+    
+    💲 ls -lah
+    
+    # long list (⚡ l: long)
+    
+    💲 ls -l
+    
+    
+    
+    
+List files that is currently empty (barely touched):
+
+    💲 find -empty
+    
+    👀 simply run the empty option (each - dash is a new command option at your service)
+    
+    
+    
+    
+    💲 find -ctime -1 -empty
+    
+    
+    
+
+Search file based on permission / owner / user / authorization ⛑:
+
+    🎬 Linux/Mac Terminal Tutorial: How To Use The find Command - @ 09:50" - 14:02" ⏰
+    
+    💲 find -perm 777
+    
+    
+    
+    In short, “chmod 777” means making the file readable, writable and executable by everyone. == Wide OPEN
+    
+    
+Delete ALL files ended with certain extension:
+
+    💲 find -type f -name "*.txt" 
+    
+    💲 find -type f -ctime -1
+    
+    ⚠ WARNING ⚠ make sure to preview your results before deletion
+    
+    The Dry Run - a good practice to simulate your results first before proceeding any irreversible actions.
+    
+    
+    
+    Set maximum depth option to filter the level:
+    
+    💲 find -type f -name "*.txt" -maxdepth 1
+    
+    👀 set the -maxdepth option to 1: ONLY search down 1 directory == the Current Directory
+    
+    
+    
+    Remove results recursively with execution:
+    
+    🎬⏰ Linux/Mac Terminal Tutorial: How To Use The find Command
+    
+    💲 find -maxdepth 1 -type f -name "*.txt" -exec rm {} +
+    
+     $ find the files and execute the remove option {} + GO
+    
+    👀 DO NOT forget the {} + with the plus sign

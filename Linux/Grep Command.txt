@@ -1,0 +1,159 @@
+🎬 https://youtu.be/VGgTmxXp7xQ
+
+Search for name in text:
+
+    💲 grep "John Williams" names.txt
+    
+     $ grep "name" file_name.txt
+    
+
+Search for whole word in text (exclude partial match):
+    
+    💲 grep -w "John Williams" names.txt
+    
+     👀 -w: whole word
+    
+    
+Search for whole word in text & case in-sensitive:
+
+    💲 grep -wi "John Williams" names.txt
+    
+    👀 -wi: whole word & case in-sensitive
+    
+    
+    
+
+Search for whole word in text & case in-sensitive & line No.:
+
+    💲 grep -win "John Williams" names.txt
+    
+    👀 -win: whole word & case in-sensitive & Line No.
+    
+    ⚡ win (think of as windows file)
+    
+    
+
+
+Search and show lines within the context - 1 of 2: preview Before and After first
+
+    💲 grep -win -C 5 "John Williams" names.txt
+    
+    ⚡ C: Context
+    
+    😎 we should apply this -C: with enough space to preview the context (E.g. 5 lines Before and After)
+    
+    
+
+
+
+Search and show lines within the context - 2 of 2: locate the exact place
+
+    💲 grep -win -B 4 "John Williams" names.txt
+    
+    ⚡ B: Before
+    
+    💲 grep -win -A 4 "John Williams" names.txt
+    
+    ⚡ A: After
+    
+    
+    
+    
+Search for text in MULTIPLE files at once:
+
+    💲 grep -win "John Williams" *.txt
+    
+    👀 make sure to define extension with *wildcard fore text files ONLY
+    
+    
+
+Search for text in ALL files in ALL subdirectories in your project:
+
+    💲 grep -winr "John Williams" * 👍
+    
+    💲 grep -winr "John Williams" .
+    
+    💲 grep -winr "John Williams" ./
+    
+    
+    
+
+Search for what file(s) contain the match:
+
+    💲 grep -winrl "John Williams" *
+    
+    💲 grep -wirl "John Williams" *
+    
+    👀 we could remove the letter n (for Line No.) since we are ONLY searching for files. NOT context within file.
+    
+    
+    
+
+Search for what file(s) contain the match and count how many matches (hits) 🎯:
+
+    💲 grep -winrc "John Williams" *
+    
+    💲 grep -wirc "John Williams" *
+    
+    👀 we could remove the letter n (for Line No.) since we are ONLY searching for files. NOT context within file.
+    
+    ⚡ c: count - how many matches (hits) 🎯
+    
+    
+
+
+
+Display ALL search history:
+
+    💲 history
+    
+    
+
+
+Filter ✂ command history with pipe | :
+
+    💲 history | grep "git commit"
+    
+    💲 history | grep "git commit" | grep "dotfile"
+    
+    😎 we could use multiple pipe | to add to the filter ✂
+    
+    
+
+
+Search file with Regular Expression:
+
+    💲 grep -r "…-…-…." *
+    
+    👀 …-…-…. : represents standard phone book format with regular expression
+    
+    3 characters -dash 3 characters -dash 4 characters
+    
+    😎 -r: recursive will always ensure to include ALL subdirectories 
+    
+    👍 Always best practices to add -r when you are not familiar with the Project contents
+    
+    
+
+    
+
+
+
+Search file with Perl compatible Regular Expression:
+    
+    💲 grep -P "\d{3}-\d{3}-\d{4}" *
+    
+    👀 -P: Perl compatible Regular X
+    
+    ⚡ \d{} \d{} \d{}
+    
+    
+
+
+🌟 Combine count hits & Regular Expression:
+
+    💲 grep -winrc -P "\d{3}-\d{3}-\d{4}" *
+    
+    💲 grep -wirc -P "\d{3}-\d{3}-\d{4}" * 👍
+    
+    💲 grep -wirl -P "\d{3}-\d{3}-\d{4}" *

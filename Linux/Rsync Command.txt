@@ -1,0 +1,105 @@
+🎬 https://youtu.be/qE77MbDnljA
+
+Install Rsync on Ubuntu:
+
+    💲 sudo apt install rsync
+
+
+
+
+Sync ALL files and sub-directories:
+
+    💲 rsync -r DevOps-Udemy/cicd-demo/* Rsync/
+    
+     $ rsync -r source/* destination/
+    
+    🛑 MUST include -r: recursively to include ALL files and related sub-directories
+    
+    👀 Should include the trailing forward-slash / in the end to indicate what's INSIDE the directory!
+    
+
+    
+
+Simulate the move with dry run option: 
+
+    💲  rsync -a --dry-run DevOps-Udemy/cicd-demo/* Rsync/
+    
+    👀 -a: archive, --dry-run: simulation-ONLY
+    
+
+    
+    
+    # Step 1 of 2: we can even pair that with a visual 👀 display for the dry run option
+    
+    💲 rsync -av --dry-run DevOps-Udemy/cicd-demo/* Rsync/
+    
+
+    
+    # Step 2 of 2: simply remove the --dry-run option and run the command
+    
+    💲 rsync -av DevOps-Udemy/cicd-demo/* Rsync/
+    
+    
+🌟 Unique of rsync: ONLY copy what's needed 👍
+
+    💲 rsync -av --dry-run DevOps-Udemy/cicd-demo/* Rsync/
+    
+    👀 If we delete 2 files, the rsync will ONLY sync what's needed - save time for copying all files 👍
+    
+
+    
+
+🌟 Unique of rsync: mirror 🔍🔎 the exact point-in-time state from the Origin source:
+
+    💲 rsync -av --delete --dry-run DevOps-Udemy/cicd-demo/ Rsync/
+    
+    ⚠WARNING: Do NOT mimic empty Source to wipe out actual contents in the Destination⚠
+    
+    👀 --delete: delete ALL that's NOT included in the Origin directory
+    
+        ○ Deleting: new_test.txt which is NOT included in the Origin directory
+        
+        ○ Adding: appspec.yml, buildspec.yml files to the destination
+    
+
+    
+🌟 BONUS: 1 of 2 - upload and SSH into remote machine:
+    
+    🎬⏰ Linux/Mac Terminal Tutorial: How To Use The rsync Command - Sync Files Locally and Remotely
+    
+    💲 rsync -zaP /home/josephyu/Rsync/ -e "ssh -i /home/josephyu/WSL.pem" ec2-user@3.235.19.60:/home/ec2-user/public
+    
+        -z  Zip to compress the files
+        -a  Archive
+        -P  Show the progress of sync
+        -zaP    All in one-step
+        /home/josephyu/Rsync/   /path/to/local/sync/folder
+        -e "ssh -i "    Grants permission to write into remote instance
+        /home/josephyu/WSL.pem  /path/to/ssh/key
+        ec2-user@3.235.19.60    ec2-user@Public IPv4 address of EC2
+        /home/ec2-user/public/  /path/to/remote/sync/folder
+    
+
+    
+    📝 remote sync (Rsync) files to AWS EC2 ✅ 👍
+    
+    📝 remote sync (Rsync) files to AWS EC2  Ref-ONLY
+
+    💲 rsync -avz /home/josephyu/Rsync/ -e "ssh -i /home/josephyu/WSL.pem" ec2-user@3.235.19.60:/home/ec2-user/public/
+    
+    🔬 breakdown:
+    
+        Rsync   Hello, I want to use rsync!
+        -av the recursive rsync command.
+        /home/josephyu/Rsync/   /path/to/local/sync/folder
+        -e "ssh -i "    Grants permission to write into remote instance
+        /home/josephyu/WSL.pem  /path/to/ssh/key
+        ec2-user@3.235.19.60    ec2-user@Public IPv4 address of EC2
+        /home/ec2-user/public/  /path/to/remote/sync/folder
+    
+
+    
+    
+🌟 BONUS: 2 of 2 - download (and SSH) from remote machine:
+    
+    💲 rsync -zaP -e "ssh -i /home/josephyu/WSL.pem" ec2-user@3.235.19.60:/home/ec2-user/backups /home/josephyu/Rsync/

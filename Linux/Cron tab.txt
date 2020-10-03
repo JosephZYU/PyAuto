@@ -1,0 +1,82 @@
+🎬 https://youtu.be/QZJ1drMQz1A
+
+Initialize Cron Job editor:
+    
+    👀 manually force default editor as vim to follow this tutorial👍
+    
+    💲 export EDITOR=/usr/bin/vim.basic
+    
+    
+    
+    
+    
+Vim basics:
+    
+    To enter editor
+    💲 crontab -e
+    
+    To enter the "editor mode"
+    💲 i
+    
+    To Quit
+    💲 :q
+    
+    To Write (save) and Quit 👍
+    💲 :wq!
+    
+    📝 Save since last change
+    
+    
+    
+
+Edit / change default editor in Ubuntu:
+
+    📝 Change the Default Editor From Nano on Ubuntu Linux ✅
+
+    💲 sudo update-alternatives --config editor
+    
+    
+    
+    
+    📝 What are the differences between vim.basic and vim.tiny
+    
+    ✔ It should be the same to choose vim.basic for vim
+    
+    
+    
+    🤏
+    # ┌───────────── minute (0 - 59)
+    # │ ┌───────────── hour (0 - 23)
+    # │ │ ┌───────────── day of month (1 - 31)
+    # │ │ │ ┌───────────── month (1 - 12)
+    # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+    # │ │ │ │ │                                       7 is also Sunday on some systems)
+    # │ │ │ │ │
+    # │ │ │ │ │
+    # * * * * *  command_to_execute
+    
+    # * * * * * echo "Hello from Joseph" >> /tmp/test_cron.txt
+    
+    
+    
+    
+    # Empty temp folder every Friday at 5pm
+    
+    💲 0 5 * * 5 rm -rf /tmp/*
+    
+    # Backup images to Google Drive every night at midnight
+    💲 0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/
+    
+    
+    
+    
+
+Clean up all Cron tab created:
+
+    💲 crontab -r 
+    
+    
+    
+🌟 Cron tab guru:
+
+    📝 https://crontab.guru/

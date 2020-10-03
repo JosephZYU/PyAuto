@@ -103,3 +103,22 @@ Simulate the move with dry run option:
 🌟 BONUS: 2 of 2 - download (and SSH) from remote machine:
     
     💲 rsync -zaP -e "ssh -i /home/josephyu/WSL.pem" ec2-user@3.235.19.60:/home/ec2-user/backups /home/josephyu/Rsync/
+
+
+😎 Sync with ONLY certain type extension:
+
+    💲 rsync -av DevOps-Udemy/cicd-demo/*.yml Rsync/
+    
+     $ rsync -av source/*.{extension} destination/
+    
+    
+    
+    💲 rsync -av DevOps-Udemy/cicd-demo/* Rsync/
+    
+    👀 /* will ignore .git files - ONLY copy "real" files into the destination
+    
+😎 Sync without certain type extension
+
+    💲 rsync -av --exclude *.yml --dry-run DevOps-Udemy/cicd-demo/* Rsync/
+    
+    👀 double -- to exclude certain file type

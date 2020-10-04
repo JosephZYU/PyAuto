@@ -1,0 +1,65 @@
+Navigate to the very beginning of the command:
+
+    🤏 Ctrl + A
+    
+    🤏 HOME 
+    
+Navigate to the very end of the command:
+
+    🤏 Ctrl + E
+    
+    🤏 END
+    
+Delete ALL before the cursor
+
+    🤏 Ctrl + U
+    
+    😎 Press END + {Ctrl + U}  tp quickly delete current command
+    
+
+Delete ALL After the cursor
+
+    🤏 Ctrl + K
+    
+    ⚡🧠 Think of UK on the keyboard for Before and After the cursor
+    
+
+😎 Display ALL directories with main structure
+
+    💲 ls *
+    
+    
+
+
+🌟 Find history commands with beginning letter
+
+    💲 !find
+    
+    💲 !fi
+    
+    💲 !rsync
+    
+     - ALT - 
+    
+    # reverse search
+    
+    🤏 Ctrl + R
+    
+    Type: keyword E.g. "rsync"
+    
+    
+
+
+Comprehensive review of command history:
+
+    💲 history
+    
+    
+    
+    
+    
+🌟 Jump to the same command by No.
+
+    💲 !525
+    
+     $ !{No. on CLI history}

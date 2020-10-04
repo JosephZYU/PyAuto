@@ -1,0 +1,111 @@
+🎬 https://youtu.be/SELYgZvAZbU
+
+Install Home brew for WSL2 Ubuntu 🍺:
+
+    📝 Install Homebrew on Ubuntu 20.04 👍👍
+    
+    🤏 sudo apt-get install build-essential curl file git
+    
+    🤏 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    
+    
+    
+    🤏 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+    🤏 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    🤏 test -r ~/.bash_profile && echo eval" ($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+    🤏 echo "eval $($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+    
+    Test Home Brew Installation on WSL2:
+    
+    💲 brew search
+    
+    
+
+
+Tree Command 🌳:
+
+    💲 tree
+    
+    
+    
+    💲 tree DevOps-Udemy/
+    
+     $ tree folder_name/
+    
+    
+    
+Update / Upgrade CLI:
+
+    💲 sudo apt-get update
+    
+    💲 sudo apt-get upgrade
+    
+    
+    
+    
+Check Info with Home Brew🍺:
+
+    💲 brew info grep
+    
+     $ brew info {package_name}
+    
+    
+    
+    # Not installed
+    
+    # Dependencies
+    
+    
+    
+    
+
+List installed Packages and Delete Package(s):
+
+    # Step 1 of 2: list what's currently installed
+    
+    💲 brew list
+    
+    # Step 2 of 2: uninstall specific package
+    
+    💲 brew uninstall hello
+    
+    
+    
+
+Home Brew maintenance 🍺:
+
+    💲 brew update
+    
+    💲 brew outdated
+    
+    💲 brew upgrade
+    
+    💲 brew cleanup
+    
+    😎 brew cleanup is great to use Cron tab as we learn from No. 07 in this 🎬 series.
+    
+    💲 brew doctor
+
+    
+    
+
+🌟 Unique feature - install Mac application via Home Brew 🍺:
+
+    🎬 Homebrew Tutorial: Simplify Software Installation on Mac Using This Package Manager ⏰⏩
+    
+    💲 brew cast install firefox
+    
+     $ brew cast install {software_name}
+    
+    😎 Install actual software on WSL2
+    
+    
+    
+    
+    
+    
+    # Navigate to the "Home Brew" home 🍺:
+    
+    💲 cd ..
+    
+    💲 cd linuxbrew/

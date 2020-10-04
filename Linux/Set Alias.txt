@@ -1,0 +1,24 @@
+🎬 https://youtu.be/0liXeoADU6A
+
+Elevate to Root privilege and Edit bash_profile:
+
+    💲 sudo nano .bash_profile
+    
+    (🔓 Enter Ubuntu password if needed)
+    
+    🤏 alias winhome='cd /mnt/c/Users/JosephYu/Desktop/'
+    
+    👀 the above path is for Ubuntu WSL2 ONLY
+    
+    
+    
+    
+    😎 always prefer to edit .bash_profile (over .bashrc)
+    
+        ○ .bash_profile: edit, re-start the terminal and ready to GO! 👍
+        ○ .bashrc: edit, and you still have to "source .bashrc" to activate every time before execution 👎
+    
+
+Check ALL alias ever created:
+
+💲 alias

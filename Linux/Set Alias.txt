@@ -19,6 +19,14 @@ Elevate to Root privilege and Edit bash_profile:
         ○ .bashrc: edit, and you still have to "source .bashrc" to activate every time before execution 👎
     
 
+
+    😎 Set alias for EC2 for flash log-in with AWS:
+
+        🤏 alias ec2='chmod 0400 WSL.pem; ssh -i WSL.pem ec2-user@3.226.239.134'
+
+    👀 NOTE: must use ; to separate each CLI with flow of sequence
+
+
 Check ALL alias ever created:
 
-💲 alias
+    💲 alias

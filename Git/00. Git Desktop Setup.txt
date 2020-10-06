@@ -1,0 +1,73 @@
+# Set Up
+
+    Check current version of git (if git even installed): 💲 git --version
+    
+    Check ALL configuration values of Git : 💲 git config --list
+    
+    Basic set up of git profile:
+        Profile Name: 💲 git config --global user.name "JosephZYU"
+        Profile Email:  💲 git config --global user.email "youremail@domain.com"
+    
+    
+    Find out help in Git: 
+        
+        💲 git help config
+    
+        👍   $ git <verb> --help
+        Alt:  $ git help <verb>
+        
+
+📝🤏 BACK UP
+    
+    [user]
+            name = JosephZYU
+            email = youremail@domain.com
+    [credential]
+            helper = wincred
+    
+    
+
+
+🌟🏛 Official - Git on Windows Subsystem for Linux 👍
+
+    😎 When in doubt - check the official documents for WSL
+
+    🎯 MUST COMPLETE 🎯
+    
+    🏛 https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup
+    
+    🤏
+    
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+    
+    
+    🎯 You must see the "credential.helper=/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe" ✅
+    
+    
+    
+    It then stores the token securely in the Windows Credential Manager. 
+    
+    After the first time, you can use git to talk to your hosting provider without needing to re-authenticate. 
+    
+    It will just access the token in the Windows Credential Manager.
+    
+    
+    
+
+🎬 Ref ONLY - How to Install and Configure Git and GitHub on Ubuntu 18.04/  Ubuntu 20.04(Linux)
+    
+    🤏
+    
+    Set Up Git:
+    
+    git config --global user.name "Your Name"
+    git config --global user.email "youremail@domain.com"
+    
+    git config -l
+    
+    other commands
+    git clone (url)
+    git add (file names)
+    git commit -m "(committed message)
+    git push -u origin master
+    git remote add origin master (url)

@@ -1,0 +1,391 @@
+🎬 Git Tutorial for Beginners: Command-Line Fundamentals
+
+🧭
+
+Git Remote work / team work integration
+Rsync   Local / individual management
+
+
+
+
+
+✅ How to show branch name on WSL Ubuntu
+
+# Installation
+
+    🏛 Microsoft - Get started using Git on Windows Subsystem for Linux
+    
+    🏛 Git - Installing from Source
+    
+    🧭 Working Directory >>> Staging Area >>> Committed Files (.git directory)
+    
+        
+
+
+# Set Up
+
+    Check current version of git (if git even installed): 
+    
+        💲 git --version
+    
+    Basic set up of git profile:
+        
+        🤏
+        Profile Name: 💲 git config --global user.name "JosephZYU"
+        Profile Email:  💲 git config --global user.email "josephyu.careers@outlook.com"
+    
+    Check ALL configuration values of Git : 
+        
+        💲 git config -l
+        
+        💲 git config --list
+        
+        
+    
+    
+    Find out help in Git: 
+        
+        💲 git help config
+    
+        👍   $ git <verb> --help
+        Alt:  $ git help <verb>
+
+
+# Use Cases
+
+Two major scenarios using GIT:
+
+    • the first scenario is that you have an existing project on your local machine that you want to start tracking using Git.
+    
+    
+    • and the second scenario is whenever there is an existing project remotely that you want to start developing on.
+    • 
+
+
+    Initialize Git
+    
+        👀 make sure you are IN that repo you want to track:
+    
+        ○ Initialize a Repo from existing code: 
+            
+            💲 git init
+        
+        
+    
+        ○ Once succeed, we should have the auto-created .git file in the folder - which contains everything related to our Repo
+        
+        
+    
+        
+    
+        ○ 🌟 Remove directory and all contents within: 
+            
+            💲 rm -rf .git/
+    
+        👀 MUST include / in the end!
+        
+        
+    
+    Working Directory
+    
+        ○ Before first commit, check the current status of our working directory:
+            
+            get git status: 
+            
+            💲 git status
+            
+            
+        
+        ○ Ignore file from the preparation "stage":
+        
+            create new ignore file: 💲 touch .gitignore
+            
+            add gitignore file: 
+            
+            
+        
+            add files you want to ignore: 
+            
+                🤏
+                .DS_Store
+                .project
+                *.pyc
+                
+            😎 Since we add ".project" to the .gitignore > now there is no .project file displayed in the working directory
+            
+            So far, we are still in the working directory. We are NOT even at the Staging Area yet!
+            
+    Staging Area
+    
+        ○ Add files to the Staging Area:
+            
+            add all the files currently on track (have made changes to): 💲 git add -A
+                                                         $ git add .
+        
+            add each file manually (invidual pick): 💲 git add .gitignore
+                                               $ git add {file_name.extension}
+                                
+            
+        
+        ○ Remove files from the Staging Area:
+        
+            remove all the files from the stage: 💲 git reset
+        
+            remove each file manually (invidual pick): 💲 git reset script.py
+                                               $ git reset {file_name.extension}
+            
+            
+            
+            BONUS: remove all contents from a directory:
+        
+            ⚠⚠⚠ USE WITH EXTREME CAUTION ⚠⚠⚠
+            
+                    💲 rm -rf <directoryname>
+    
+    Committed Repo:
+    
+        🛑 NOTE: you must place your message within the " "
+        
+        ○ Commit to Repo: 
+        
+            💲 git commit -m "Initial Commit"
+        
+            
+
+        ○ Now the Working Directory should be clean:
+    
+            
+
+
+        ○ Retrieve the Git log: 💲 git log
+        
+            
+        
+        
+        ○ Cloning a remote Repo from GitHub:
+        
+            🌟 ONLY focus on the .git and don't forget dot in the end:
+                                                      👇
+            💲 git clone ../Local-Repo/.git .
+            
+            $ git clone <url> <where to clone>
+            
+            
+        
+            💲 git clone https://github.com/CoreyMSchafer/remote_repo.py
+        
+        ○ Viewing Information about the Remote Repo:
+        
+            
+            
+            💲 git remote -v
+            💲 git branch -a
+            
+            
+            
+        ○ Make changes to the Clone Repo file:
+        
+        
+        
+        ○ Commit and Push changes to the remote Repo:
+        
+        
+        
+        
+        
+        
+        
+        
+🌟 Cloning a remote repo from GitHub 🐱‍💻:
+
+    💲 git clone https://github.com/JosephZYU/Boto3.git .
+    
+    👀 make sure to include dot "." to indicate copy to current directory - without the parent folder Boto3 👍
+    
+    
+    
+    
+    
+    
+    
+    
+View Information about the remote repo:
+
+    💲 git remote -v
+    
+    👀 lower case v in this case
+    
+    💲 git branch -a
+    
+    👀 lower case a in this case
+    
+    
+    
+    
+    
+    
+Push changes to our code:
+
+    💲 git diff
+    
+    ⚠NOTE⚠ git diff ONLY show code change on existing files - it will NOT include anything on new files (E.g. add.py which we just created)
+    
+    
+    
+    
+    💲 git status
+    
+    📝 git status is the preliminary screening process 🔍 that ONLY shows what's been changed compared to the last version
+    
+    It's NOT even on the STAGING area, not to mention the final committed Git repo
+    
+    
+    
+    Now we have:
+        ○ Added one new file add.py
+        ○ Modified existing file with new greetings
+        
+    
+    
+    
+    
+    
+    💲 git commit -m "add function + greetings"
+    
+    👀 NOTE: we've ONLY committed these files LOCALLY on our desktop. We still have to push them to the remote git
+    
+    
+    
+    
+    💲 git pull origin main
+    
+    👀 the word main could main or master which depends on your personal settings!
+    
+    🛑 MUST perform this step for real-world team collaborations
+    
+    
+    
+    💲 git remote add origin https://github.com/JosephZYU/Boto3.git
+    
+    🧐 If you just established your local repo and have NOT yet add your origin to link with a master
+    
+    
+    
+    
+    
+    
+    
+    how to push GitHub with username and password
+    
+
+🌟 Working with branch instead of the main:
+
+    🎬 Git Tutorial for Beginners: Command-Line Fundamentals ⏰
+    
+    💲 git branch calc-divide
+    
+     $ git branch {branch_name}
+    
+    💲 git checkout calc-divide
+    
+    👀 checkout: enter the branch you want to work with
+    
+    
+    
+    # Switch between branches
+    
+    💲 git branch
+    
+    💲 git checkout main
+    
+    
+    
+    
+    💲 git push -u origin calc-divide
+    
+    ⚡🧠 -u: associate our local calc-divide branch with the GitHub remote branch:
+        ○ git push
+        ○ git pull
+    
+    
+    
+    
+    
+    
+    
+    
+Ref ONLY - Create Separate Branch to work with - Local Sample:
+
+    ○ Create branch and work on it:
+    
+    💲 git branch calc_divide
+    💲 git checkout calc_divide
+    
+    💲 git status
+    💲 git add .
+    
+    💲 git branch
+    💲 git commit -m "Add Divide Function"
+    
+    
+    
+    
+Check out ALL branches:
+
+    💲 git branch -a
+    
+    💲 git branch
+    
+    
+    
+    
+Merge branch with Main:
+    
+    # Step 1 of 3: ALWAYS make sure to Pull again before any push  - Local ONLY
+    
+    💲 git pull origin main
+    
+    # Step 2 of 3: Make sure we're are in the MAIN branch NOW, and then merge with the (sub) branch  - Local ONLY
+    
+    💲 git merge calc-divide
+    
+    # Step 3 of 3: Finally push all changes to the remote Git Hub MAIN branch - Remote
+    
+    💲 git push 
+    
+    
+    
+    
+    
+    
+    
+    
+Optional - Delete the branch:
+
+    # Make sure calc-divide shows up in the git branch --merged: double-confirm it indeed has been merged 
+    
+    💲 git branch --merged
+    
+    # Delete calc-divide on the local repo 🖥
+    
+    💲 git branch -d calc-divide
+    
+    # Delete calc-divide on the remote GitHub repo 🐱‍💻
+    
+    👀 NOTE: we are deleting the remote branch by PUSHING to the remote origin!
+    
+    💲 git push origin --delete calc-divide
+    
+    
+    
+    😎 We're now left with 1 MAIN branch ONLY
+    
+    
+    
+    
+    
+    
+    
+⚡ Faster Example ⚡
+
+    🎬 Git Tutorial for Beginners: Command-Line Fundamentals ⏰

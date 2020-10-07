@@ -1,0 +1,255 @@
+Check out difference since last committed version:
+
+    💲 git diff
+    
+
+    
+
+Un-do the difference (by checking out specific file):
+
+    💲 git checkout calc.py
+    
+    🧐 MUST include the checkout file in the end!
+    
+    😎 Here the check out is NOT to switch branch, but to getting out of the calc.py working status and un-do any changes
+    
+    👀 We can further verify the "checkout" by using git status & git diff
+    
+
+    
+    
+What if messed up with our commit message ( - m "message" ):
+
+    🎯 ONLY change the message without doing another commit:
+
+    💲 git commit --amend -m "Completed Subtract Function"
+    
+    🛑 NOTE: the hash will also change despite we're amending on the same commit
+    
+
+    
+
+    
+    
+    👀 NOTE: the --amend option is to change the comments ONLY, and must be done before pushing to the remote Origin Main / Master
+    
+
+    
+    👀 The above 👆 is the incorrect message for final commit
+    
+    After we run the --amend option, we can see the commit has been modified with the new comments 👇
+    
+
+    
+
+What if we accidentally forget to include a file as part of our commit:
+
+    🎬 Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits ⏰
+
+    💲 git commit --amend
+    
+    👀 we're amending the file this time, do NOT add anything after the --amend
+    
+    😎 ONLY perform this if you have not yet pushed to other people
+    
+
+    
+    💲 git log --stat
+    
+    ⚡🧠 show the details of our last commit
+    
+    👀 Now we can see the .gitignore file is part of the last combined commit
+    
+    🛑 Also note that this hash is DIFFERENT - we're changing our Git history
+    
+
+    
+
+🌟 What if we want to move the whole commit to our feature branch instead of our MAIN branch:
+
+    Optional - recall - create and switch to branch:
+
+    💲 git branch {new branch}
+    
+    💲 git checkout {new branch}
+    
+
+
+
+    Perform Git cherry pick 🍒
+    
+    🎬 Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits ⏰
+    
+    😎 Cherry pick will create a new commit based off of our original - DOES NOT delete the original after that cherry pick
+    
+    👀 type letter "q" directly to escape git log (:q)
+    
+    
+    
+    🎯 cherry-pick
+    
+    Step 1 of N: copy hash # from the MAIN branch 
+    
+    💲 git log
+    
+    🤏 89540f449eadd22809503d186960095a9f32c523
+    
+    😎 normally 🤏 pick 5 to 7 (E.g. 89540f) characters will be fine
+    
+
+    
+    
+    Optional - confirm there is NO commit of our cherry pick (Initial Commit is when it set up)
+    
+    💲 git log
+    
+
+    
+    
+    Step 2 of N: checkout (switch to) our feature branch:
+    
+    💲 git checkout subtract-feature
+    
+
+    
+    Step 3 of N: checkout (switch to) our feature branch 🍒
+    
+    💲 git cherry-pick 89540f
+    
+    💲 git cherry-pick 89540f449eadd22809503d186960095a9f32c523
+    
+    👀 Now we're "re-locate" our commit from MAIN branch to feature branch
+    
+
+    
+    Step 4 of N: after the cherry-pick, we should then delete / reset the commit from the MAIN branch - never meant for the MAIN to begin with
+    
+    
+        4.1 git reset --soft    Back 1-level to STAGING area    👍
+        4.2 git reset (mix - default)   Back 2-level to WORKING area    👌
+        4.3 git reset hard  Factory Reset - abandon ALL works   ⚠
+        
+    
+    4.1 🎬 Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits ⏰
+    
+    💲 git reset --soft ff816f52
+    
+     $ git reset --soft {hash # of initial commit}
+    
+    👀 the --soft option {hash #} is the one we want to KEEP! KEEP! KEEP! And we shall get rid of whatever that's NOT included. (E.g. get rid of Completed Subtract Function)
+    
+
+    
+    What's great about a "soft" reset is that: it will "down-grade" / "relocate" 1-level to our work back to the STAGING area
+     - in which we will NEVER lose any of our work
+    
+
+    
+    4.2 🎬 Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits ⏰
+    
+    💲 git reset ff816f52
+    
+     $ git reset {hash # of initial commit}
+    
+    👀 Use the default reset option simply put git reset without the --soft option
+    
+    🧐 Now it will "down-grade" / "relocate" 2-level to our work back to the Working area
+    
+
+    
+    4.3 🎬 Git Tutorial: Fixing Common Mistakes and Undoing Bad Commits ⏰
+    
+    🛑 Be cautious with git reset --hard 🛑:
+    
+        ○ It will match the exact state we were in at the hash # we specify 🔍🔎
+        ○ It will delete our previous changes ⚠
+    
+    💲 git reset --hard ff816f52
+    
+     $ git reset --hard {hash # of initial commit}
+    
+    🧐 NOTE: all related work has been delete - reset hard to "factory-origin" settings 👇
+    
+
+    
+
+Get rid of ALL untracked files:
+
+    💲 git clean -df
+    
+    ⚡🧠
+    
+    🧐 -d: get rid of any untracked directories
+    🧐 -f: get rid of any untracked files
+    
+
+    
+🌟 Retrieve git commands if you accidentally hard reset from above - potential life saver👍👍 :
+
+    💲 git reflog
+    
+    Shows exactly what we've doing so far
+    
+
+    
+    💲 git checkout 89540f4
+    
+    🧐 89540f4 is the 7-digit hash # from the checkout command: 
+
+    
+    Now we can see the we have our changes back!
+    
+    This it the previous commit that we reset and get rid of
+    
+
+    
+    🛑 NOTE: we are now in a detached-trash state - which will be deleted if NOT saved
+    
+
+    
+    🎯 save the detached into backup feature-branch
+    
+    💲 git branch backup
+    
+    NOTE: by running the 💲 git branch backup: it will save the current state into the new branch all-in-one step!
+    
+    😎 Now we can see it's still there - saved into backup
+    
+
+    
+    Optional - double confirm the backup is saved
+    
+
+    
+    
+🌟👍 What if you really want to un-do some commits while other people have pulled some changes:
+
+    🎯 To revert the effect of some earlier commits
+    
+    👍 Now whenever you push these changes and somebody else pulls those down their history is not going to be corrupted because all of this history is the same and all they're going to get is these are these new commits that undid those previous commits
+    
+    👀 It's NOT going to modify / delete any existing commits - it's ONLY creating new commits on top of those that completed un-do all changes >> our history remains intact
+    
+    ⚡🧠 revert: whatever happened stay there - only undo with new commits
+
+    💲 git revert 89540f4
+    
+
+    
+    Optional - check if reverted ✅
+    
+
+    
+    😎 pro-tips on checking the difference between 1 hash #
+    
+    💲 git diff 89540f4 b1b0430
+
+😎 BONUS - how to create file names with space in between:
+
+	🐱‍💻 https://askubuntu.com/a/636755 ✅
+	
+	😎 Use double-quotes "" in most cases 👍
+	
+	💲 touch "02. Common Mistakes and Bad Commits.txt" 
+	
+💲 touch 02.\ Common\ Mistakes\ and\ Bad\ Commits.txt

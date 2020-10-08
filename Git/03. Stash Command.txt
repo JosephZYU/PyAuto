@@ -1,0 +1,92 @@
+Recall from 2 of 5 - Get rid of ALL untracked files 👍👍:
+
+    💲 git clean -df
+    
+    👀 This operation ONLY clean Untracked files, it does NOT revert changes performed on your - the modification is still there
+    
+    
+    
+    
+If we want to see what our file look like before we "working on" it:
+
+    💲 git stash save "Worked on add function"
+    
+    NOTE: if we stash it, all changes will disappear
+    
+    
+    
+    # List all the stashes created with ID No.
+    
+    💲 git stash list
+    
+    
+    
+    # Retrieve stash back by ID No.
+    
+    💲 git stash apply stash@{0}
+    
+    😎 stash@{No.} from the stash list 🤏
+    
+    
+    
+    # Switch back from [ ! $ ] Stash to [ $ ]Feature branch (Reset us back to where we were)
+    
+    💲 git checkout -- .
+    
+    
+    
+    # Use "pop" to grab the 1st stash we have, apply those changes, and drop the stash
+    
+    💲 git stash pop
+    
+    👀 Even though we dropped the stash, the changes are still there
+    
+    
+    
+Save up-to-date changes into Stash:
+
+    🎯 Stash is to meant to SAVE changes into functions as your "Inventory" (before submission to the remote Git)
+    
+    💲 git stash save "Add Calc.py functions"
+    
+    💲 git stash list - Optional - check it has been saved ✅
+    
+    😎 NOTE: once we saved out stash, we will automatically switch back to the [ $ ] Feature Branch and back to where we started
+    
+     - From [ ! ] back to [ $ ] will drop changes since we saved it into stash@{0}
+    
+    
+    
+    💲 git stash save "Added Square function"
+    
+    💲 git stash list
+    
+    💲 git stash pop
+    
+    
+    
+    
+Get rid of the Square function (drop):
+
+    💲 git stash drop
+    
+    👀 It will undo the square function, and drop the stash@{0} - Added Square function
+    
+    
+    
+Get rid of ALL of our stashes created:
+    
+    🛑 Apply with Caution - it will delete all stashes we have 
+
+    💲 git stash clear
+    
+    😎 It's ALL gone
+    
+    
+    
+
+Handy use case:
+
+    🎬 Git Tutorial: Using the Stash Command ⏰
+    
+    🧐 Stash is to carry over from branch to branch

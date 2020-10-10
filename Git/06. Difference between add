@@ -1,0 +1,107 @@
+🧭⚡🧠
+
+💲 git add -A    Add the ENTIRE working tree 🌳
+💲 git add --all 
+💲 git add (default)  - including . Current directory ✔
+ - including /* sub directory ✔
+ - including ../ parent directory ✔
+💲 git add . Add the Current directory and ALL sub-directories
+    
+ - including . Current directory ✔
+ - including /* sub directory ✔
+ - excluding ../ parent directory ❌👀
+    
+     - 😎 ONLY works the SAME when you're on TOP directory
+    
+     - 👍 It's recommended to add . before commit  ALL (-A) to the Staging area
+💲 git add -u    Add ONLY the updated / modified / deleted files in the ENTIRE working tree 🌳
+💲 git add --update  
+ - Excluding newly created files that has not yet committed
+    
+ - 👍 great for gradual "partial" project submission that we've just worked on
+
+ - including . Current directory ✔
+ - including /* sub directory ✔
+ - including ../ parent directory ✔
+
+
+
+
+
+Git Add the ENTIRE working tree 🌳
+    
+    💲 git add -A
+    
+         - including . Current directory ✔
+ - including /* sub directory ✔
+ - including ../ parent directory ✔
+    
+    🧐 -A add the ENTIRE working tree including the "sub-branch" of the tree 🌳
+    
+
+    
+
+    
+    💲 git add -A
+    
+    🧐 Even if we apply the -A in the sub-directory - it will ALSO include all the parent tree
+    
+
+    
+
+    
+    💲 git add -A sub_dir/
+    
+    🧐 We may also specify the "specific" directory to add to the staging area
+    
+    
+
+    
+    💲 git add sub_dir/
+    
+    😎In fact, git add -A is the default method here, we can simply type add ${folder name} without the -A 👍 
+    
+
+    
+    
+    
+Git add ONLY Current and any Sub-directories - Excluding newly created files that has not yet committed
+
+    💲 git add .
+
+         - including . Current directory ✔
+ - including /* sub directory ✔
+ - excluding ../ parent directory ❌👀
+        
+         - 😎 ONLY works the SAME when you're on TOP directory
+         - 👍 It's recommended to add . before commit  ALL (-A) to the Staging area
+    
+
+
+
+
+Git add ONLY the updated / modified / deleted files - Excluding newly created files that has not yet committed
+
+    💲 git add -u
+    
+    💲 git add --update
+    
+         - Excluding newly created files that has not yet committed
+        
+ - 👍great for gradual "partial" project submission that we've just worked on
+
+ - including . Current directory ✔
+ - including /* sub directory ✔
+ - including ../ parent directory ✔
+
+    
+
+    
+    
+    💲 git add -u sub_dir/
+    
+    🧐 Similar to add -A, we may also specify the "specific" directory to add to the staging area
+    
+    💲 git add -u .
+    
+    😎 ALT: adding the dot " . " in the end to specify the ONLY current directory.
